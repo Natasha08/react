@@ -1,8 +1,11 @@
 import React from "react";
 import {expect} from "chai";
 import setup from '../setup';
-import Layout from '../../src/js/components/Layout';
 import {logger} from "react-logger";
+import TestUtilsHelper from '../helpers/test_utils_helper';
+import { findDOMNode } from 'react-dom';
+
+const Spa = require('../../src/js/components/Layout');
 
 describe('My first react test', function() {
   it('works on something...', function() {
