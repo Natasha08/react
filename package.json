@@ -1,0 +1,29 @@
+{
+  "name": "webpack",
+  "version": "1.0.0",
+  "description": "webpack tutorial",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-react-html-attrs": "^2.0.0",
+    "babel-plugin-transform-class-properties": "^6.10.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "css-loader": "^0.23.1",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "webpack-dev-server --content-base src --inline --hot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Natasha Osborne <natasha08@me.com> (http://www.natashaosborne.com)",
+  "license": "ISC"
+}

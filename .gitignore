@@ -1,0 +1,10 @@
+## node ##
+node_modules
+
+##sublime##
+*.sublime-project
+*.sublime-workspace
+
+## debug ##
+*.log
+*.me
