@@ -2,9 +2,8 @@ var webpack = require('webpack');
 var debug = process.env.Node_ENV !== "production";
 
 module.exports = {
-    //context: "./",
     devtool: debug ? "inline-sourcemap": null,
-    entry: "./src/js/client.js", 
+    entry: "./src/js/client.js",
     output: {
         path: "src/",
         filename: "bundle.js"
@@ -23,7 +22,7 @@ module.exports = {
             }
         ]
     },
-    
+
      plugins: debug ? [] : [
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),

@@ -1,5 +1,5 @@
 {
-  "name": "webpack",
+  "name": "react",
   "version": "1.0.0",
   "description": "webpack tutorial",
   "main": "webpack.config.js",
@@ -13,17 +13,37 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
     "css-loader": "^0.23.1",
+    "jsdom": "^9.4.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "react-logger": "^1.1.0"
+  },
   "scripts": {
     "dev": "webpack-dev-server --content-base src --inline --hot",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --compilers js:babel-core/register test",
+    "testComponents": "mocha --compilers js:babel-core/register test/components"
   },
   "author": "Natasha Osborne <natasha08@me.com> (http://www.natashaosborne.com)",
-  "license": "ISC"
+  "license": "ISC",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Natasha08/react.git"
+  },
+  "keywords": [
+    "learning",
+    "react"
+  ],
+  "bugs": {
+    "url": "https://github.com/Natasha08/react/issues"
+  },
+  "homepage": "https://github.com/Natasha08/react#readme"
 }
