@@ -3,9 +3,10 @@ import foodItemsReducer from "./foodItemsReducer";
 import userReducer from "./userReducer";
 import workoutsReducer from "./workoutsReducer";
 
-var reducer;
+//similar to start, error if variable not declared
+var rootReducer;
 
-export default reducer = combineReducers({
+export default rootReducer = combineReducers({
 	user: userReducer,
 	foodItems: foodItemsReducer,
 	workouts: workoutsReducer
