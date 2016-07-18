@@ -1,9 +1,15 @@
+const path = require('path');
 var webpack = require('webpack');
 var debug = process.env.Node_ENV !== "production";
 
 module.exports = {
-    devtool: debug ? "inline-sourcemap": null,
-    entry: "./src/js/client.js",
+    // devtool: debug ? "inline-sourcemap": null,
+    // entry: path.join(__dirname, 'src', 'app.js'),
+    // output: {
+    //     path: _dirname + '/js',
+    //     filename: "bundle.js"
+    // } ,
+    entry: "./src/js/app.js",
     output: {
         path: "src/",
         filename: "bundle.js"
@@ -28,4 +34,8 @@ module.exports = {
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false}),
     ],
+    //_dirname still causes error
+    // resolve: {
+    //   root: [path.resolve(_dirname, 'src'), path.resolve(_dirname, 'node_modules')]
+    // }
 };

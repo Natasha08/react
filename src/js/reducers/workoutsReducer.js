@@ -1,13 +1,19 @@
 "use strict"
 
-const workoutsReducer = (state=[], action) => {
+export default function workoutsReducer(state = {
+	fetching: false,
+	fetched: false,
+	details_thunk: [],
+	details_promise: [],
+	error: null
+}, action) {
 
 	switch(action.type) {
 		case "ADD_WORKOUTS": {
-			state = {...state, workouts: action.payload}
+			state = {...state, details: action.payload}
 			break;
 		}
-	}	
+	}
 	return state;
 };
 
