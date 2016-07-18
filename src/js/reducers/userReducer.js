@@ -26,7 +26,6 @@ export default function userReducer(state = {
 		 }
 	  break;
 	 }
-	 return state;
 	}
 
 switch(action.type) {
