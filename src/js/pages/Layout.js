@@ -39,7 +39,7 @@ export default class Layout extends React.Component {
 
 		return (
       <div>
-        {console.log("REACT-PROMISE LOG", this.props.user[0])}
+        {console.log("REACT-PROMISE LOG", this.props.user)}
         {console.log("THUNK LOG", this.props.userThunk)}
         <Header changeTitle = {this.changeTitle.bind(this)} title = {this.state.title} />
         {this.props.children}
