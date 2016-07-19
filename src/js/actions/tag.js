@@ -1,11 +1,15 @@
-import _ from 'lodash';
+import _ from 'lodash-uuid';
 
 export default {
   create: function(text) {
     if ( _.isEmpty(text) ) { return new Function() }
 
     let current_id = _.uuid();
-    return {text, id: current_id, type: 'ADD_TAG'};
+    return {
+      type: 'ADD_TAG',
+      text,
+      id: current_id
+    };
   },
 
   update: function(id, fields) {

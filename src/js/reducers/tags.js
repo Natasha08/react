@@ -2,7 +2,7 @@ import tag from './tag';
 
 import { byExternalIdInSet } from '../reducers/helpers/sync';
 
-export default function(state = [], action) {
+export default function(state = { myTags: {} }, action) {
   switch(action.type) {
     case 'SYNC':
       let stateExternalIds = _.map(state, 'externalId');
