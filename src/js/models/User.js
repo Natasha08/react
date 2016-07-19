@@ -1,8 +1,8 @@
-const User = (username, user_email, user_age) => {
+const User = (username, user_email, tag_id) => {
 	return {
 		username: username,
 		user_email: user_email,
-		user_age: user_age
+		tag_id: tag_id
 	};
 };
 

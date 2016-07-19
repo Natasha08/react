@@ -18,6 +18,8 @@
     "css-loader": "^0.23.1",
     "history": "^3.0.0",
     "jsdom": "^9.4.1",
+    "lodash": "^4.13.1",
+    "lodash-uuid": "0.0.3",
     "react": "^15.1.0",
     "react-addons-test-utils": "^15.2.1",
     "react-dom": "^15.1.0",
@@ -28,6 +30,7 @@
     "redux-promise-middleware": "^3.3.2",
     "redux-thunk": "^2.1.0",
     "style-loader": "^0.13.1",
+    "underscore.inflection": "^1.3.2",
     "webpack": "^1.13.1"
   },
   "devDependencies": {
@@ -36,7 +39,9 @@
   "scripts": {
     "dev": "webpack-dev-server --content-base src --inline --hot",
     "test": "mocha --compilers js:babel-core/register test",
-    "testComponents": "mocha --compilers js:babel-core/register test/components"
+    "testComponents": "mocha --compilers js:babel-core/register test/components",
+    "testPages": "mocha --compilers js:babel-core/register test/pages",
+    "testActions": "mocha --compilers js:babel-core/register test/actions"
   },
   "author": "Natasha Osborne <natasha08@me.com> (http://www.natashaosborne.com)",
   "license": "ISC",
