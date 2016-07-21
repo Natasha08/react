@@ -7,8 +7,9 @@ import { connect } from "react-redux";
 import { fetchFoodItems } from "../actions/foodAction";
 import { fetchUser } from "../actions/userAction";
 import { fetchUserThunk} from "../actions/userActionThunk";
-import  Tags  from "../actions/tag";
-import FoodsTag from "../actions/food";
+import  Tag  from "../actions/tag";
+import Food from "../actions/food";
+import FoodTag from "../actions/food-tag"
 
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -17,18 +18,23 @@ import Header from "../components/Header";
   return {
     user: store.user.details_promise,
     userThunk: store.user.details_thunk,
-    tags: store.tags,
+    tag: store.tag,
     foodItems: store.foodItems,
+    foodTag_id: store.foodTag
   };
 })
 
 export default class Layout extends React.Component {
+
   componentWillMount() {
+    const food_id = this.props.foodItems.food_id;
+    const tag_id = this.props.tag;
     this.props.dispatch(fetchUser())
     this.props.dispatch(fetchUserThunk())
-    this.props.dispatch(Tags.create({ text: 'myfirsttag'} ))
-    this.props.dispatch(FoodsTag.create({ text: 'mysecondTag' }))
+    this.props.dispatch(Tag.create({ text: 'tag'} ))
+    this.props.dispatch(Food.create({ text: 'food-id' }))
     this.props.dispatch(fetchFoodItems())
+    this.props.dispatch(FoodTag.create({ text: 'food-tag', food_id: food_id, tag_id: tag_id}))
   }
 
   constructor() {
@@ -45,7 +51,8 @@ export default class Layout extends React.Component {
 	render() {
 		return (
       <div>
-
+        {console.log("TEST", this.props.foodItems.food_id)}
+        {console.log("tag", this.props.tag)}
         <Header changeTitle = {this.changeTitle.bind(this)} title = {this.state.title} />
         {this.props.children}
         <Link to = "/"><button>Home</button></Link>
