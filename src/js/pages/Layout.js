@@ -10,6 +10,7 @@ import { fetchUserThunk} from "../actions/userActionThunk";
 import  Tag  from "../actions/tag";
 import Food from "../actions/food";
 import FoodTag from "../actions/food-tag"
+import store from '../store';
 
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -24,11 +25,10 @@ import Header from "../components/Header";
   };
 })
 
+
 export default class Layout extends React.Component {
 
   componentWillMount() {
-    const food_id = this.props.foodItems.food_id;
-    const tag_id = this.props.tag;
     this.props.dispatch(fetchUser())
     this.props.dispatch(fetchUserThunk())
     this.props.dispatch(Tag.create({ text: 'tag-id'} ))
@@ -49,14 +49,21 @@ export default class Layout extends React.Component {
   }
 
 	render() {
+    const originalFoods = this.props.foodItems.foods.items;
+    const foodItems = Object.assign( {}, originalFoods );
+    module.exports = foodItems;
+    
 		return (
       <div>
         <Header changeTitle = {this.changeTitle.bind(this)} title = {this.state.title} />
         {this.props.children}
+        {console.log("originalFoods", foodItems)}
+        {console.log("Layout Props", this.props)}
         <Link to = "/"><button>Home</button></Link>
         <Link to = "about"><button>about</button></Link>
         <Link to = "projects"><button>projects</button></Link>
         <Footer />
+
       </div>
 	  );
 	}
