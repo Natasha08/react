@@ -2,7 +2,7 @@ import food_id from './food';
 
 import { byExternalIdInSet } from '../reducers/helpers/sync';
 
-export default function(state = {food_id:  {}}, action) {
+export default function(state = {foodId:  {}}, action) {
   switch(action.type) {
     case 'SYNC':
       let stateExternalIds = _.map(state, 'externalId');
@@ -12,7 +12,7 @@ export default function(state = {food_id:  {}}, action) {
         let newAction = Object.assign({type: 'SYNC_FOOD'},
           t.externalId ? _.find(action.food_ids, _.pick(t, 'externalId')) : undefined
         );
-        return food(t, newAction);
+        return food_id(t, newAction);
       });
     case 'ADD_FOOD':
       return [...state, food_id(undefined, action)];

@@ -8,14 +8,9 @@ export default {
 
     let food_tag_id = _.uuid();
 
-    return function(dispatch, getState) {
-
-      dispatch({id: food_tag_id, type: 'ADD_FOOD_TAG', text});
-    }
+    return {id: food_tag_id, type: 'ADD_FOOD_TAG', text};
   }
 }
-
-
 
 // export default {
 //   create: function({text, food_id, tag_id}) {

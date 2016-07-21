@@ -31,10 +31,10 @@ export default class Layout extends React.Component {
     const tag_id = this.props.tag;
     this.props.dispatch(fetchUser())
     this.props.dispatch(fetchUserThunk())
-    this.props.dispatch(Tag.create({ text: 'tag'} ))
+    this.props.dispatch(Tag.create({ text: 'tag-id'} ))
     this.props.dispatch(Food.create({ text: 'food-id' }))
     this.props.dispatch(fetchFoodItems())
-    this.props.dispatch(FoodTag.create({ text: 'food-tag', food_id: food_id, tag_id: tag_id}))
+    this.props.dispatch(FoodTag.create({ text: 'food-tag-id'}))
   }
 
   constructor() {
@@ -51,8 +51,6 @@ export default class Layout extends React.Component {
 	render() {
 		return (
       <div>
-        {console.log("TEST", this.props.foodItems.food_id)}
-        {console.log("tag", this.props.tag)}
         <Header changeTitle = {this.changeTitle.bind(this)} title = {this.state.title} />
         {this.props.children}
         <Link to = "/"><button>Home</button></Link>
