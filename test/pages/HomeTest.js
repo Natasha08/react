@@ -5,13 +5,13 @@ import {logger} from "react-logger";
 import TestUtilsHelper from '../helpers/test_utils_helper';
 import { findDOMNode } from 'react-dom';
 
-const Projects = require('../../src/js/pages/Projects');
+const Home = require('../../src/js/pages/Home');
 
-  context('Projects Page', function () {
-  it('renders Projects child', function () {
-    let testDocument = TestUtilsHelper.render(<div>Projects Page</div>);
+  context('Home Page', function () {
+  it('renders Home child', function () {
+    let testDocument = TestUtilsHelper.render(<div>Home Page</div>);
     let renderedText = findDOMNode(testDocument).textContent;
 
-    expect(renderedText).to.match(/Projects Page/);
+    expect(renderedText).to.match(/Home Page/);
   });
 });

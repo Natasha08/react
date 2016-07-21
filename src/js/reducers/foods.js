@@ -8,7 +8,7 @@ export default function(state = {foodId:  {}}, action) {
       let stateExternalIds = _.map(state, 'externalId');
       let newFoods = _.reject(action.food_ids, byExternalIdInSet(stateExternalIds));
 
-      return _.map(_.flatten([state, newTodos]), t => {
+      return _.map(_.flatten([state, newFoods]), t => {
         let newAction = Object.assign({type: 'SYNC_FOOD'},
           t.externalId ? _.find(action.food_ids, _.pick(t, 'externalId')) : undefined
         );
