@@ -49,15 +49,11 @@ export default class Layout extends React.Component {
   }
 
 	render() {
-    const originalFoods = this.props.foodItems.foods.items;
-    const foodItems = Object.assign( {}, originalFoods );
-    module.exports = foodItems;
-    
+
 		return (
       <div>
         <Header changeTitle = {this.changeTitle.bind(this)} title = {this.state.title} />
         {this.props.children}
-        {console.log("originalFoods", foodItems)}
         {console.log("Layout Props", this.props)}
         <Link to = "/"><button>Home</button></Link>
         <Link to = "about"><button>about</button></Link>
@@ -67,4 +63,5 @@ export default class Layout extends React.Component {
       </div>
 	  );
 	}
+
 }

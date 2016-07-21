@@ -1,27 +1,16 @@
 import React from "react";
 import ContentEditable from "react-contenteditable";
 import _ from 'lodash';
+import { connect } from "react-redux";
 import store from '../store';
-
 import Checkbox from './utility/checkbox';
 import List from './utility/list';
 import Item from './utility/item';
-import foodItems from '../pages/Layout';
 import TagActions from '../actions/tag';
 
 
 export default React.createClass({
-    renderItems: function(item) {
-      return (
-        <Item key={ item.food_name} >
-          <ContentEditable
-            html={item.text} // innerHTML of the editable div
-            disabled={false}       // use true to disable edition
-            //onChange={ this.editTag(item.id) } // handle innerHTML change
-          />
-        </Item>
-      );
-    },
+
 render() {
   return (
     <div>
@@ -29,7 +18,7 @@ render() {
               <input type="text" placeholder = "new tag" />
               <li>
                 {console.log("store tag", store.getState().foodItems.foods.items)}
-                {console.log("foodItems", foodItems)}
+                {console.log("foodItems", this.props)}
               </li>
     </div>
 );
