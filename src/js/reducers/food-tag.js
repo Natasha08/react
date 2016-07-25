@@ -9,7 +9,7 @@ export default composeReducer({
   },
 
   ADD_FOOD_TAG: function(state, action) {
-    return _.pick(action, 'id', 'food_id', 'tag_id', 'externalId', 'tag_ExternalId', 'food_ExternalId', 'persisted');
+    return _.pick(action, 'id', 'todo_id', 'tag_id', 'externalId', 'tag_ExternalId', 'food_ExternalId', 'persisted');
   },
 
   EDIT_FOOD_TAG: function(state, action) {
@@ -18,6 +18,6 @@ export default composeReducer({
     }
 
     return Object.assign({persisted: false}, state, _.pick(action,
-      'id', 'food_id', 'tag_id', 'externalId', 'tag_ExternalId', 'food_ExternalId', 'persisted'));
+      'id', 'todo_id', 'tag_id', 'externalId', 'tag_ExternalId', 'food_ExternalId', 'persisted'));
   }
 });

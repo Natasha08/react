@@ -8,13 +8,13 @@ export default {
 
     let food_tag_id = _.uuid();
 
-    return {id: food_tag_id, type: 'ADD_FOOD_TAG', text};
+    return {id: food_tag_id, type: 'ADD_TODO_TAG', text};
   }
 }
 
 // export default {
-//   create: function({text, food_id, tag_id}) {
-//     if ( _.isEmpty(text) || _.isEmpty(food_id)) {
+//   create: function({text, todo_id, tag_id}) {
+//     if ( _.isEmpty(text) || _.isEmpty(todo_id)) {
 //       return new Function();
 //     }
 //
@@ -27,7 +27,7 @@ export default {
 //         dispatch({text, id: tag_id, type: 'ADD_TAG'});
 //       }
 //
-//       dispatch({id: food_tag_id, type: 'ADD_FOOD_TAG', tag_id, food_id, text});
+//       dispatch({id: food_tag_id, type: 'ADD_FOOD_TAG', tag_id, todo_id, text});
 //     }
 //   }
 // }

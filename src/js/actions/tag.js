@@ -1,4 +1,5 @@
 import _ from 'lodash-uuid';
+import React from 'react';
 
 export default {
   create: function(text) {

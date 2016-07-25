@@ -6,19 +6,22 @@ import { Provider } from "react-redux";
 import store from "./store";
 import {Router, Route, IndexRoute, hashHistory} from "react-router";
 
-import About from "./pages/About";
+import Todos from "./pages/Todos";
 import Home from "./pages/Home";
 import Layout from "./pages/Layout";
-import Projects from "./pages/Projects";
+import Tags from "./pages/Tags";
+import TodoTags from "./pages/TodoTags";
 
 const app = document.getElementById('app');
+
 ReactDom.render(<Provider store={store}>
 	<Router history = {hashHistory}>
 	  <Route path= "/" component = {Layout}>
 		  <IndexRoute component = {Home}></IndexRoute>
 			<Route path = "/" component = {Home}></Route>
-			<Route path = "about" component = {About}></Route>
-			<Route path = "projects" component = {Projects}></Route>
+			<Route path = "todos" component = {Todos}></Route>
+			<Route path = "tags" component = {Tags}></Route>
+			<Route path = "todo-tags" component = {TodoTags}></Route>
 		</Route>
 	</Router>
 	</Provider>,

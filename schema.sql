@@ -9,22 +9,11 @@ CREATE TABLE users(
 );
 
 
-CREATE TABLE efridge (
-  food_id     INT NOT NULL PRIMARY KEY,
-  food_name      VARCHAR(50) NOT NULL,
-  brand          VARCHAR(50) NOT NULL,
-  serving_size   VARCHAR(50) NOT NULL,
-  total_calories DECIMAL(6,2) NOT NULL,
-  fat_grams DECIMAL(4,2) NOT NULL,
-  carbohydrate_grams  DECIMAL(5,2) NOT NULL,
-  protein_grams  DECIMAL(5,2) NOT NULL,
-  total_grams DECIMAL(7,2) NOT NULL,
-  user_id	 INT NOT NULL REFERENCES users(user_id)
-);
 
-CREATE TABLE food (
-  food_id     INT NOT NULL PRIMARY KEY,
-  food_name      VARCHAR(50) NOT NULL
+
+CREATE TABLE todo (
+  todo_id     INT NOT NULL PRIMARY KEY,
+  todo_name      VARCHAR(50) NOT NULL
 );
 -- CREATE TABLE egym (
 --   workout_id   INT PRIMARY KEY AUTO_INCREMENT,

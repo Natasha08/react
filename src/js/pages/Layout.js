@@ -8,7 +8,7 @@ import { fetchFoodItems } from "../actions/foodAction";
 import { fetchUser } from "../actions/userAction";
 import { fetchUserThunk} from "../actions/userActionThunk";
 import  Tag  from "../actions/tag";
-import Food from "../actions/food";
+import Food from "../actions/todo";
 import FoodTag from "../actions/food-tag"
 import store from '../store';
 
@@ -31,8 +31,8 @@ export default class Layout extends React.Component {
   componentWillMount() {
     this.props.dispatch(fetchUser())
     this.props.dispatch(fetchUserThunk())
-    this.props.dispatch(Tag.create({ text: 'tag-id'} ))
-    this.props.dispatch(Food.create({ text: 'food-id' }))
+    //this.props.dispatch(Tag.create({ text: 'tag-id'} ))
+    //this.props.dispatch(Food.create({ text: 'food-id' }))
     this.props.dispatch(fetchFoodItems())
     this.props.dispatch(FoodTag.create({ text: 'food-tag-id'}))
   }
@@ -54,10 +54,9 @@ export default class Layout extends React.Component {
       <div>
         <Header changeTitle = {this.changeTitle.bind(this)} title = {this.state.title} />
         {this.props.children}
-        {console.log("Layout Props", this.props)}
         <Link to = "/"><button>Home</button></Link>
-        <Link to = "about"><button>about</button></Link>
-        <Link to = "projects"><button>projects</button></Link>
+        <Link to = "todos"><button>Todos</button></Link>
+        <Link to = "tags"><button>Tags</button></Link>
         <Footer />
 
       </div>

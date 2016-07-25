@@ -1,3 +1,5 @@
+import React from "react";
+
 function check(id, callback) {
   return function(event) {
     callback(id);
