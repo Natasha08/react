@@ -14,7 +14,7 @@ export default React.createClass({
     store.dispatch(TodoActions.create(evt.target.value));
     evt.target.value = '';
   },
-  
+
   check: function(id) {
     return () => store.dispatch(TodoActions.toggle(id));
   },
@@ -43,7 +43,7 @@ export default React.createClass({
         <Checkbox checked = { item.completed } onCheck={ this.check(item.id) } id={item.id} />
         {item.text}
         {' '}
-        <Link to = "todo-tags"><button onClick={ this.showTagList(item.id) }>tags</button></Link>
+        <Link to = "todotags"><button onClick={ this.showTagList(item.id) }>tags</button></Link>
       </Item>
    );
  },

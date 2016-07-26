@@ -18,12 +18,13 @@ export default {
     });
   },
 
-  setCurrent: function(id) {
+  setCurrent: function(id, text) {
     if(id) {
       return {
         type: 'SET_CURRENT',
         model_type: 'Todo',
-        id: id
+        id,
+        text
       };
     } else {
       return {

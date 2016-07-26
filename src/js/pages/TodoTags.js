@@ -2,7 +2,7 @@ import React from "react";
 import TodoTagList from "../components/todo-tag-list";
 import store from "../store";
 
-export default class TodoTag extends React.Component {
+export default class TodoTags extends React.Component {
 
 	render() {
 		return (
