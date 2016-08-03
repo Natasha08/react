@@ -8,6 +8,7 @@ import List from './utility/list';
 import Item from './utility/item';
 import TodoActions from '../actions/todo';
 import { Link } from "react-router";
+import Page from "../pages/pages";
 
 export default React.createClass({
   addTodo: function(evt) {
@@ -19,9 +20,9 @@ export default React.createClass({
     return () => store.dispatch(TodoActions.toggle(id));
   },
 
-  showTagList: function(id) {
+  showTagList: function(id, text) {
     return function() {
-      store.dispatch(TodoActions.setCurrent(id));
+      store.dispatch(TodoActions.setCurrent(id, text));
     }
   },
 
@@ -38,12 +39,17 @@ export default React.createClass({
   },
 
   renderItems: function(item) {
+    let id = item.id;
+    let text = item.text;
+
     return (
-      <Item key={ item.id} ContentEditable={true}>
-        <Checkbox checked = { item.completed } onCheck={ this.check(item.id) } id={item.id} />
-        {item.text}
+      <Item key={ id} ContentEditable={true}>
+        <Checkbox checked = { item.completed } onCheck={ this.check(id) } id={id} />
+        {text}
         {' '}
-        <Link to = "todotags"><button onClick={ this.showTagList(item.id) }>tags</button></Link>
+        {console.log("ITEM_TEXT", text)}
+
+        <Link to = 'todotags'><button onClick={ this.showTagList(id, text) }>tags</button></Link>
       </Item>
    );
  },
@@ -58,9 +64,12 @@ export default React.createClass({
   },
 
   render: function() {
+        let state = store.getState();
     return (
       <List>
       {console.log("TODOS", store.getState().todos)}
+      {	console.log("CURRENT_TODO", store.getState().currentTodo)}
+          {	console.log("FILTERED_TAGS", store.getState().filteredTags)}
         <input type="text" onBlur = { this.addTodo } onKeyDown = { this.catchEnter }  placeholder = "new todo" />
          {store.getState().todos.map(this.renderItems)}
      </List>

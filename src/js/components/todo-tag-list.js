@@ -12,18 +12,16 @@ import TodoActions from '../actions/todo';
 
 export default React.createClass({
 
-  getDefaultProps: function() {
-    return {
-      todos: []
-    }
-  },
-
+  // componentWillMount: function() {
+  //   return { currentTodo: store.getState().currentTodo }
+  // },
+  //
   getInitialState: function() {
     return {selectedTag: ''};
   },
 
   check: function(id) {
-    return () => store.dispatch(TodoActions.toggle(id));
+    return () => store.dispatch(TodoTagActions.toggle(id));
   },
 
   edit: function(id) {
@@ -35,16 +33,49 @@ export default React.createClass({
   },
 
   addTag: function(evt) {
-    store.dispatch(TagActions.create(evt.target.value));
+    let actionArgs = {
+      text: evt.target.value,
+      todo_id:  store.getState().currentTodo.id
+    };
+
+    if(this.getTag(evt.target.value)) {
+      actionArgs.tag_id = this.getTag(evt.target.value).id;
+    }
+
+    store.dispatch(TodoTagActions.create(actionArgs));
 
     evt.target.value = '';
+    this.setState({selectedTag: ''});
   },
+  getTag: function(value) {
+    let currentEntry = new RegExp('\^' + value);
+
+    return _.find(store.getState().tags,function(tag) {
+      return currentEntry.test(tag.text);
+    });
+  },
+  setTagFromSelection: function(evt) {
+     let actionArgs = {
+       text: this.state.selectedTag,
+       todo_id:  store.getState().currentTodo.id
+     };
+
+     if(this.getTag(this.state.selectedTag)) {
+       actionArgs.tag_id = this.getTag(this.state.selectedTag).id;
+     }
+
+     store.dispatch(TodoTagActions.create(actionArgs))
+
+     evt.target.value = '';
+     this.setState({selectedTag: ''});
+   },
 
   catchEnter: function(evt) {
     if( evt.keyCode == '13' ) {
       evt.preventDefault();
 
       this.addTag(evt);
+      this.setTagFromSelection(evt);
     }
   },
 
@@ -67,38 +98,21 @@ export default React.createClass({
   this.unsubscribe();
  },
 
- getTag: function(value) {
-   let currentEntry = new RegExp('\^' + value);
 
-   return _.find(store.getState().tags,function(tag) {
-     return currentEntry.test(tag.text);
-   });
- },
-
- setTagFromSelection: function(evt) {
-   let actionArgs = {
-     text: this.state.selectedTag,
-     todo_id: store.getState().currentObject.id
-   };
-
-   if(this.getTag(this.state.selectedTag)) {
-     actionArgs.tag_id = this.getTag(this.state.selectedTag).id;
-   }
-
-   store.dispatch(TodoTagActions.create(actionArgs))
-
-   this.refs.entry.value = '';
-   this.setState({selectedTag: ''});
- },
-
+// { store.getState().filteredTags.map(this.renderItems) }
  render: function() {
+     let currentTodo = store.getState().currentTodo;
+     let state = store.getState();
    return (
+
      <div>
        <h3>{store.getState().currentTodo.text}</h3>
        <List>
-          {console.log("TODO-TAGS", store.getState().tags)}
-         <input ref="entry" type="text" onKeyDown = { this.catchKey } placeholder = "new tag" />
-         <div onClick={ this.setTagFromSelection }>{this.state.selectedTag}</div>
+
+          <input ref = "entry" type="text" onBlur = { this.addTag } onKeyDown = { this.catchEnter }  placeholder = "new todo-tag" />
+          {console.log("filterTags", state.filteredTags) }
+          {console.log("state", state)}
+          {console.log("state_currenttodo", currentTodo)}
          { store.getState().filteredTags.map(this.renderItems) }
        </List>
      </div>
