@@ -4,7 +4,7 @@ import store from "../store";
 import Actions from '../actions/page';
 import { browserHistory } from 'react-router'
 import Pages from '../actions/page';
-
+import _ from 'lodash';
 
 let defaultPage = null;
 let pages = [];
