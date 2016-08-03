@@ -1,6 +1,5 @@
 import _ from 'lodash-uuid';
 
-
 export default {
   create: function({text, todo_id, tag_id}) {
     if ( _.isEmpty(text) || _.isEmpty(todo_id)) {

@@ -17,7 +17,7 @@ import Radium from 'radium';
 var Menu = require('react-burger-menu').slide
 // let pageName = 'Home';
 let RadiumLink = Radium(Link);
-
+let title = "Welcome to React & Redux!";
 @connect((store) => {
   return {
 
@@ -25,38 +25,28 @@ let RadiumLink = Radium(Link);
 })
 
 export default class Layout extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      title: "Welcome to React & Redux!"
-    };
-  }
+
   changeTitle(title) {
     this.setState({title})
   }
 
-  isMenuOpen(store) {
-
-  }
-
 	render() {
-    let state = store.getState();
 
 		return (
+
       <div>
         <div>
-          <Menu onStateChange={ this.isMenuOpen }>
+          <Menu isOpen = {false}>
             <RadiumLink className="menu-item" to="">Home</RadiumLink>
             <RadiumLink className="menu-item" to="/todos">Todos</RadiumLink>
             <RadiumLink className="menu-item" to="/tags">Tags</RadiumLink>
           </Menu>
         </div>
-        <Header changeTitle = {this.changeTitle.bind(this)} title = {this.state.title}/>
+        <Header changeTitle = {this.changeTitle.bind(this)} title = {title}/>
         <Link to = "/"><button className={ Page.active() ? 'active' : null }>Home</button></Link>
         <Link to = "/todos"><button className={ Page.active() ? 'active' : null }>Todos</button></Link>
         <Link to = "/tags"><button className={ Page.active() ? 'active' : null }>Tags</button></Link>
         {this.props.children}
-        { console.log("isOpen", this.props)}
         <Footer />
        </div>
 	  );

@@ -11,7 +11,6 @@ import todos from "./reducers/todos";
 import name from "./reducers/page";
 import currentObject from "./reducers/currentObject";
 import currentTodo from "./reducers/currentTodo";
-
 import _ from 'lodash';
 
 import composeReducer from '../lib/compose-reducer';
