@@ -1,17 +1,18 @@
+import { shallow, mount } from 'enzyme';
 import React from "react";
 import {expect} from "chai";
 import setup from '../setup';
 import {logger} from "react-logger";
-import TestUtilsHelper from '../helpers/test_utils_helper';
+import { enzymeRender } from '../helpers/test_utils_helper';
 import { findDOMNode } from 'react-dom';
+import About from '../../src/js/pages/About';
+import sinon from 'sinon';
 
-const About = require('../../src/js/pages/About');
-
-  context('About Page', function () {
-  it('renders About child', function () {
-    let testDocument = TestUtilsHelper.render(<div>About Page</div>);
-    let renderedText = findDOMNode(testDocument).textContent;
-
-    expect(renderedText).to.match(/About Page/);
+describe('About Page', function() {
+  context('test', function () {
+    let wrapper = mount(<About />);
+    it('renders About child', function () {
+      expect(wrapper.text()).to.contain('About Page');
+    });
   });
 });

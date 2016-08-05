@@ -1,64 +1,57 @@
 {
   "name": "react",
   "version": "1.0.0",
-  "description": "webpack tutorial",
+  "description": "todo app",
   "main": "webpack.config.js",
+  "directories": {
+    "test": "test"
+  },
   "dependencies": {
     "axios": "^0.13.1",
     "babel-core": "^6.10.4",
-    "babel-loader": "^6.2.4",
     "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-loader": "^6.2.4",
     "babel-plugin-react-html-attrs": "^2.0.0",
     "babel-plugin-transform-class-properties": "^6.10.2",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
+    "babel-preset-es2015": "^6.9.0",
     "babel-preset-stage-0": "^6.5.0",
     "chai": "^3.5.0",
     "css-loader": "^0.23.1",
+    "enzyme": "^2.4.1",
     "history": "^3.0.0",
     "jsdom": "^9.4.1",
     "lodash": "^4.13.1",
-    "lodash-uuid": "0.0.3",
     "radium": "^0.18.1",
-    "react": "^15.1.0",
+    "lodash-uuid": "^0.0.3",
+    "react": "^15.2.1",
     "react-addons-test-utils": "^15.2.1",
-    "react-burger-menu": "^1.9.9",
     "react-contenteditable": "^1.0.1",
-    "react-dom": "^15.1.0",
+    "react-burger-menu": "^1.10.1",
+    "react-dom": "^15.2.1",
+    "react-logger": "^1.1.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.5.2",
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
     "redux-promise-middleware": "^3.3.2",
-    "redux-thunk": "^2.1.0",
     "style-loader": "^0.13.1",
+    "redux-thunk": "^2.1.0",
+    "sinon": "^1.17.5",
     "underscore.inflection": "^1.3.2",
     "webpack": "^1.13.1"
   },
-  "devDependencies": {
-    "react-logger": "^1.1.0"
-  },
+  "devDependencies": {},
   "scripts": {
-    "dev": "webpack-dev-server --content-base src --inline --hot",
-    "test": "mocha --compilers js:babel-core/register test",
-    "testComponents": "mocha --compilers js:babel-core/register test/components",
-    "testPages": "mocha --compilers js:babel-core/register test/pages",
-    "testActions": "mocha --compilers js:babel-core/register test/actions"
-  },
-  "author": "Natasha Osborne <natasha08@me.com> (http://www.natashaosborne.com)",
-  "license": "ISC",
-  "directories": {
-    "test": "test"
+    "test": "mocha --compilers js:babel-core/register test/**/*.js"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/Natasha08/react.git"
   },
-  "keywords": [
-    "learning",
-    "react"
-  ],
+  "author": "natasha",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Natasha08/react/issues"
   },

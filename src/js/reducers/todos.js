@@ -15,6 +15,7 @@ export default function(state = [], action) {
         return todo_id(t, newAction);
       });
     case 'ADD_TODO':
+      console.log("TODOs_REDUCER_LOG", "I AM REACHING HERE!");
       return [...state, todo_id(undefined, action)];
     case 'TOGGLE_TODO':
       return state.map(t => todo_id(t, action));

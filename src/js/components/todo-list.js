@@ -56,7 +56,7 @@ export default React.createClass({
 
   catchEnter: function(evt) {
     if( evt.keyCode == '13' ) {
-      evt.preventDefault();
+      // evt.preventDefault();
 
       this.addTodo(evt);
       return true;
@@ -70,7 +70,7 @@ export default React.createClass({
       {console.log("TODOS", store.getState().todos)}
       {	console.log("CURRENT_TODO", store.getState().currentTodo)}
           {	console.log("FILTERED_TAGS", store.getState().filteredTags)}
-        <input type="text" onBlur = { this.addTodo } onKeyDown = { this.catchEnter }  placeholder = "new todo" />
+        <input type="text" value = '' onBlur = { this.addTodo } onKeyDown = { this.catchEnter }  placeholder = "new todo" />
          {store.getState().todos.map(this.renderItems)}
      </List>
     );

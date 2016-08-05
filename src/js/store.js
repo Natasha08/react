@@ -66,6 +66,6 @@ let store = createStore(rootReducer, middleware);
 
 export default store;
 
-store.subscribe(() => {
-	console.log("store changed", store.getState());
-})
+// store.subscribe(() => {
+// 	console.log("store changed", store.getState());
+// })

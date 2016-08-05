@@ -7,6 +7,7 @@ export default composeReducer({
   },
 
   ADD_TODO: function(state, action) {
+        console.log("TODO_REDUCER_LOG", "I AM REACHING HERE!");
     return Object.assign({completed: false}, _.pick(action, 'id', 'text', 'externalId', 'completed'));
   },
 
