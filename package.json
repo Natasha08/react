@@ -49,7 +49,8 @@
   "devDependencies": {},
   "scripts": {
     "start": "webpack-dev-server --content-base src --inline --hot",
-    "test": "mocha --compilers js:babel-core/register test/**/*.js"
+    "test": "mocha --compilers js:babel-core/register test/**/*.js",
+    "babel": "babel-node node_modules/.bin/babel-istanbul cover _mocha test/**/*.js && cat ./coverage/lcov.info | ./node_modules/.bin/codecov"
   },
   "repository": {
     "type": "git",
