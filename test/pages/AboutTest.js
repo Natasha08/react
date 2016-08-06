@@ -1,5 +1,5 @@
-import { shallow, mount } from 'enzyme';
 import React from "react";
+import { shallow, mount } from 'enzyme';
 import {expect} from "chai";
 import setup from '../setup';
 import {logger} from "react-logger";

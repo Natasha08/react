@@ -43,12 +43,6 @@ describe('Todos Page', function() {
 
 
 
-
-
-
-
-
-
       // console.log("TODOS_LOG", store.dispatch(TodoActions.create('shopping')));
       // let onInputStub = sinon.spy();
       // let inputField = wrapper.find('input').first();
