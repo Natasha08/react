@@ -1,3 +1,5 @@
+//postgres db
+
 CREATE TABLE users(
   user_id     INT NOT NULL PRIMARY KEY,
   email      VARCHAR(50) UNIQUE NOT NULL,

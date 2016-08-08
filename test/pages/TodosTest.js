@@ -20,36 +20,13 @@ describe('Todos Page', function() {
     });
 
     it('Simulates an input event', function () {
-      let onInputStub = sinon.spy();
+      let storeDispatchSpy = sinon.stub(store, 'dispatch');
 
-      let wrapper = mount(<TodoList onInput={onInputStub} />);
+      let wrapper = mount(<TodoList />);
       let Input = wrapper.find('input[type="text"]');
       let evt = {target: {value: 'shopping'}};
-      Input.simulate('change', 'shopping');
-      Input.simulate('keyDown', {keyCode: 13});
-      // expect(onInputStub.called).to.be.true;
+      Input.simulate('blur', evt);  // have to use the wrapper...
+      expect(storeDispatchSpy.callCount).to.eq(1);
     });
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-      // console.log("TODOS_LOG", store.dispatch(TodoActions.create('shopping')));
-      // let onInputStub = sinon.spy();
-      // let inputField = wrapper.find('input').first();
-
-      // let event2 = {target: {value: 'working out'}};
-
-      // console.log("INPUTFIELD CHANGE", );
-      //wrapper.simulate('change', event1)
-      //wrapper.simulate('change', event2);
-      // assert.equal(onInputStub.calledTwice, true);
