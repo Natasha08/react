@@ -14,7 +14,8 @@ import TodoTags from "./pages/TodoTags";
 
 const app = document.getElementById('app');
 
-ReactDom.render(<Provider store={store}>
+const Routes = React.createClass({
+  render: ReactDom.render(<Provider store={store}>
 	<Router history = {browserHistory}>
 	  <Route path= "/" component = {Layout}>
 		  <IndexRoute component = {Home}></IndexRoute>
@@ -25,4 +26,7 @@ ReactDom.render(<Provider store={store}>
 		</Route>
 	</Router>
 	</Provider>,
-	app);
+	app)
+});
+
+export default Routes;

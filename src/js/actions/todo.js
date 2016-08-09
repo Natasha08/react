@@ -2,11 +2,9 @@ import _ from 'lodash-uuid';
 
 export default {
   create: function(text) {
-    console.log("ACTION_LOG", "I AM REACHING HERE!");
     if ( _.isEmpty(text) ) { return new Function(); }
 
     let current_id = _.uuid();
-    console.log("ACTION_LOG", "I AM ALSO REACHING HERE!");
     return {text, id: current_id, type: 'ADD_TODO'};
   },
 
