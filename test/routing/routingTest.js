@@ -7,29 +7,28 @@ import { findDOMNode } from 'react-dom';
 import Layout from '../../src/js/pages/Layout';
 import sinon from 'sinon';
 import store from '../../src/js/store';
-import {Router, Route, IndexRoute, browserHistory} from "react-router";
+import {Router, createMemoryHistory, browserHistory} from "react-router";
+var Menu = require('react-burger-menu').slide
+const history = createMemoryHistory("/todos");
 
 describe('Routing', function() {
   context('test', function () {
-    testHelper.enzymeRender((
-      <Layout />
-    ), { rendering: 'mount'});
+    testHelper.enzymeRender(( <Layout /> ), { rendering: 'mount'});
 
-    it('renders Home on app load', function () {
+    it('renders child routes', function () {
       expect(this.wrapper.text()).to.contain('Home');
+      expect(this.wrapper.text()).to.contain('Todos');
+      expect(this.wrapper.text()).to.contain('Tags');
+      expect(this.wrapper.text()).not.to.contain('TodoTags');
+      // console.log(this.wrapper.find('.bm-burger-button').debug());
     });
-
-    it('Navigates to Tags Page', function () {
-      // let button = this.wrapper.find('a').last();
-      // console.log("TAGS_BUTTON_LOG", button.debug());
-      // button.simulate('click');
-
-      // console.log("BURGER_MENU_LOG", this.wrapper.debug());
-       expect(this.wrapper.text()).to.contain('Tags');
-    });
-    it('Navigates to Todos Page', function () {
-      // let button = this.wrapper.find('button').last();
-      // console.log("WRAPPER_LOG", button.debug());
+    it('renders burger-menu button', function () {
+      let target = this.wrapper.find('.bm-burger-button');
+      target.find('button').simulate('click');
+      let menuNode = this.wrapper.find(Menu);
+      // todoButton.simulate('click');
+      // console.log("TODOS_LOG", menuNode.find('.menu-item').map(node => node.text()));
+      console.log("GETTING_BUTTONS_LOG", browserHistory);
     });
   });
 });

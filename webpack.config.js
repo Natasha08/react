@@ -4,16 +4,16 @@ var debug = process.env.Node_ENV !== "production";
 
 module.exports = {
     // devtool: debug ? "inline-sourcemap": null,
-    // entry: path.join(__dirname, 'src', 'app.js'),
-    // output: {
-    //     path: _dirname + '/js',
-    //     filename: "bundle.js"
-    // } ,
-    entry: "./src/js/app.js",
+    entry: path.join(__dirname, 'src/js', 'app.js'),
     output: {
-        path: "src/",
+        path: __dirname + '/build',
         filename: "bundle.js"
     } ,
+    // entry: "./src/js/app.js",
+    // output: {
+    //     path: "src/",
+    //     filename: "bundle.js"
+    // } ,
     module: {
         loaders: [
             { test: /\.css$/, loader: "style!css" },
@@ -35,7 +35,9 @@ module.exports = {
         new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false}),
     ],
     //_dirname still causes error
-    // resolve: {
-    //   root: [path.resolve(_dirname, 'src'), path.resolve(_dirname, 'node_modules')]
-    // }
+    resolve: {
+      root: [path.resolve(__dirname, 'src/js'),
+            path.resolve(__dirname, 'src/lib'),
+            path.resolve(__dirname, 'node_modules')]
+    }
 };

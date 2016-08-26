@@ -2,13 +2,13 @@ import React from "react";
 import ContentEditable from "react-contenteditable";
 import _ from 'lodash';
 import { connect } from "react-redux";
-import store from '../store';
-import Checkbox from './utility/checkbox';
-import List from './utility/list';
-import Item from './utility/item';
-import TodoActions from '../actions/todo';
+import store from 'store';
+import Checkbox from 'utility/checkbox';
+import List from 'utility/list';
+import Item from 'utility/item';
+import TodoActions from 'actions/todo';
 import { Link } from "react-router";
-import Page from "../pages/pages";
+import Page from "pages/pages";
 
 export default React.createClass({
   addTodo: function(evt) {

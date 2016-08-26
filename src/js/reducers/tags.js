@@ -1,6 +1,6 @@
 import tag from './tag';
 
-import { byExternalIdInSet } from '../reducers/helpers/sync';
+import { byExternalIdInSet } from 'reducers/helpers/sync';
 
 export default function(state = [], action) {
   switch(action.type) {

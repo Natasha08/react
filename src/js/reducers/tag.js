@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import composeReducer from '../../lib/compose-reducer';
+import composeReducer from 'compose-reducer';
 
 export default composeReducer({
   SYNC_TAG: function(state, action) {

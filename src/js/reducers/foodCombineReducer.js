@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import foodItemsReducer from "./foodItemsReducer";
-import foods_tag from "./foods-tag";
+import foodItemsReducer from "foodItemsReducer";
+import foods_tag from "foods-tag";
 
 var foodCombineReducer;
 

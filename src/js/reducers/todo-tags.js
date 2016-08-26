@@ -1,6 +1,6 @@
 
-import composeReducer from '../../lib/compose-reducer';
-import todoTag from '../reducers/todo-tag';
+import composeReducer from 'compose-reducer';
+import todoTag from 'reducers/todo-tag';
 import { byExternalIdInSet } from './helpers/sync';
 
 export default composeReducer({

@@ -1,9 +1,9 @@
 import React from "react";
-import TodoList from "../components/todo-list";
-import store from "../store";
-import Actions from '../actions/page';
+import TodoList from "components/todo-list";
+import store from "store";
+import Actions from 'actions/page';
 import { browserHistory } from 'react-router'
-import Pages from '../actions/page';
+import Pages from 'actions/page';
 
 let pageName = 'Todos';
 

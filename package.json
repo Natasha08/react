@@ -45,6 +45,9 @@
     "webpack": "^1.13.1"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^3.0.1",
+    "html-webpack-plugin": "^2.22.0",
+    "html-webpack-template": "^5.1.1",
     "sinon-chai": "^2.8.0"
   },
   "scripts": {

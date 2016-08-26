@@ -1,4 +1,4 @@
-import composeReducer from '../../lib/compose-reducer';
+import composeReducer from 'compose-reducer';
 
 export default composeReducer({
   SET_CURRENT: function(state = [], action) {

@@ -1,7 +1,7 @@
 import React from "react";
-import TodoTagList from "../components/todo-tag-list";
-import store from "../store";
-import Pages from "../actions/page";
+import TodoTagList from "components/todo-tag-list";
+import store from "store";
+import Pages from "actions/page";
 
 let pageName = 'TodoTags';
 

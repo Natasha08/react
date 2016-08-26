@@ -3,14 +3,13 @@
 import React from "react";
 import ReactDom from "react-dom";
 import { Provider } from "react-redux";
-import store from "./store";
+import store from "store";
 import {Router, Route, IndexRoute, browserHistory} from "react-router";
-
-import Todos from "./pages/Todos";
-import Home from "./pages/Home";
-import Layout from "./pages/Layout";
-import Tags from "./pages/Tags";
-import TodoTags from "./pages/TodoTags";
+import Todos from "pages/Todos";
+import Home from "pages/Home";
+import Layout from "pages/Layout";
+import Tags from "pages/Tags";
+import TodoTags from "pages/TodoTags";
 
 const app = document.getElementById('app');
 

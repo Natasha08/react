@@ -1,5 +1,5 @@
 	const food =  [
-		{ food_ExternalId: 'c95c4509-2964-40d4-979b-37b6bb8024ed'},
+		{ food_ExternalId: 3},
 	  { food_name: 'banana' },
 	  { food_name: 'apple' },
 	  { food_name: 'pear' },

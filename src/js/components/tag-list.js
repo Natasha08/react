@@ -2,11 +2,11 @@ import React from "react";
 import ContentEditable from "react-contenteditable";
 import _ from 'lodash';
 import { connect } from "react-redux";
-import store from '../store';
-import Checkbox from './utility/checkbox';
-import List from './utility/list';
-import Item from './utility/item';
-import TagActions from '../actions/tag';
+import store from 'store';
+import Checkbox from 'utility/checkbox';
+import List from 'utility/list';
+import Item from 'utility/item';
+import TagActions from 'actions/tag';
 
 export default React.createClass({
 

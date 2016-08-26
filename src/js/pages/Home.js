@@ -1,6 +1,6 @@
 import React from "react";
-import store from "../store";
-import Pages from "../actions/page";
+import store from "store";
+import Pages from "actions/page";
 
 let pageName = 'Home';
 

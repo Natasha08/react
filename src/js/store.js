@@ -5,15 +5,15 @@ import logger from "redux-logger";
 import promise from "redux-promise-middleware";
 import thunk from "redux-thunk";
 import { combineReducers } from "redux";
-import tags from "./reducers/tags";
-import todoTags from "./reducers/todo-tags";
-import todos from "./reducers/todos";
-import name from "./reducers/page";
-import currentObject from "./reducers/currentObject";
-import currentTodo from "./reducers/currentTodo";
+import tags from "reducers/tags";
+import todoTags from "reducers/todo-tags";
+import todos from "reducers/todos";
+import name from "reducers/page";
+import currentObject from "reducers/currentObject";
+import currentTodo from "reducers/currentTodo";
 import _ from 'lodash';
 
-import composeReducer from '../lib/compose-reducer';
+import composeReducer from 'compose-reducer';
 
 
 
