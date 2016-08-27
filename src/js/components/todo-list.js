@@ -68,15 +68,16 @@ export default React.createClass({
 
   render: function() {
         let state = store.getState();
+        this.getTodo();
     return (
       <List>
       {console.log("TODOS", store.getState().todos)}
       {	console.log("CURRENT_TODO", store.getState().currentTodo)}
       {	console.log("FILTERED_TAGS", store.getState().filteredTags)}
-      { console.log("REPO_CALL", this.getTodo())}
         <label htmlFor="new todo"></label>
         <input id="new todo" type="text" onBlur = { this.addTodo } onKeyDown = { this.catchEnter }  placeholder = "new todo" />
          {store.getState().todos.map(this.renderItems)}
+         {state.todoRepository.todos.map(this.renderItems)}
      </List>
     );
   }
