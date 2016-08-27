@@ -9,13 +9,16 @@ import Item from './utility/item';
 import TodoActions from 'actions/todo';
 import { Link } from "react-router";
 import Page from "pages/pages";
+import {fetchTodos} from "actions/todoRepository";
 
 export default React.createClass({
   addTodo: function(evt) {
     store.dispatch(TodoActions.create(evt.target.value));
     evt.target.value = '';
   },
-
+  getTodo: function(evt) {
+    store.dispatch(fetchTodos());
+  },
   check: function(id) {
     return () => store.dispatch(TodoActions.toggle(id));
   },
@@ -69,8 +72,10 @@ export default React.createClass({
       <List>
       {console.log("TODOS", store.getState().todos)}
       {	console.log("CURRENT_TODO", store.getState().currentTodo)}
-          {	console.log("FILTERED_TAGS", store.getState().filteredTags)}
-        <input type="text" onBlur = { this.addTodo } onKeyDown = { this.catchEnter }  placeholder = "new todo" />
+      {	console.log("FILTERED_TAGS", store.getState().filteredTags)}
+      { console.log("REPO_CALL", this.getTodo())}
+        <label htmlFor="new todo"></label>
+        <input id="new todo" type="text" onBlur = { this.addTodo } onKeyDown = { this.catchEnter }  placeholder = "new todo" />
          {store.getState().todos.map(this.renderItems)}
      </List>
     );

@@ -11,6 +11,7 @@ import todos from "reducers/todos";
 import name from "reducers/page";
 import currentObject from "reducers/currentObject";
 import currentTodo from "reducers/currentTodo";
+import todoRepository from 'reducers/todoRepository';
 import _ from 'lodash';
 
 import composeReducer from 'compose-reducer';
@@ -43,7 +44,8 @@ const rootReducer = (state = {}, action) => {
     currentPage: name(state.currentPage, action),
     currentObject: currentObject(state.currentObject, action),
     filteredTags: state.filteredTags,
-    currentTodo: state.currentTodo
+    currentTodo: state.currentTodo,
+    todoRepository: todoRepository(state.todoRepository, action)
   };
 
   return Object.assign(firstPass, {
