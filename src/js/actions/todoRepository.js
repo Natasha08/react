@@ -13,15 +13,3 @@ export function fetchTodos() {
     	})
   }
 }
-
-
-// "use strict "
-//
-// import axios from "axios";
-//
-// export function fetchTodos() {
-//   return {
-//     type: "FETCH_TODOS",
-//     payload: axios.get("http://localhost:3000/todos")
-//   }
-// }
