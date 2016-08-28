@@ -9,16 +9,20 @@ import Item from './utility/item';
 import TodoActions from 'actions/todo';
 import { Link } from "react-router";
 import Page from "pages/pages";
-import {fetchTodos} from "actions/todoRepository";
+import { saveTodos } from "actions/saveTodoRepository";
 
 export default React.createClass({
   addTodo: function(evt) {
     store.dispatch(TodoActions.create(evt.target.value));
     evt.target.value = '';
   },
-  getTodo: function(evt) {
-    store.dispatch(fetchTodos());
+
+  saveTodo: function(evt) {
+    console.log("SAVE_TODO_TEXT", evt.target.value)
+    store.dispatch(saveTodos(evt.target.value));
+    evt.target.value = '';
   },
+
   check: function(id) {
     return () => store.dispatch(TodoActions.toggle(id));
   },
@@ -60,20 +64,16 @@ export default React.createClass({
   catchEnter: function(evt) {
     if( evt.keyCode == '13' ) {
       // evt.preventDefault();
-
-      this.addTodo(evt);
+      console.log("CATCH_ENTER_TEXT", evt.target.value);
+      this.saveTodo(evt);
       return true;
     }
   },
 
   render: function() {
         let state = store.getState();
-        this.getTodo();
     return (
       <List>
-      {console.log("TODOS", store.getState().todos)}
-      {	console.log("CURRENT_TODO", store.getState().currentTodo)}
-      {	console.log("FILTERED_TAGS", store.getState().filteredTags)}
         <label htmlFor="new todo"></label>
         <input id="new todo" type="text" onBlur = { this.addTodo } onKeyDown = { this.catchEnter }  placeholder = "new todo" />
          {store.getState().todos.map(this.renderItems)}

@@ -4,6 +4,8 @@ import axios from "axios";
 
 export function fetchTodos() {
   return function(dispatch) {
+      dispatch({type: "FETCH_TODOS_START"})
+
       axios.get("http://localhost:3000/todos")
     	.then((response) => {
     		dispatch({type: "RECEIVE_TODOS", payload: response.data})
