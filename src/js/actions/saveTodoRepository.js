@@ -7,9 +7,7 @@ export function saveTodos(text) {
       dispatch({type: "SAVE_TODOS_START"})
 
       axios.post("http://localhost:3000/todos", {
-        params: {
-          text
-        }
+          text: text
       })
     	.then((response) => {
     		dispatch({type: "SAVE_TODOS", payload: response.data})
