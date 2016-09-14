@@ -1,6 +1,7 @@
-install:
-  - npm install -g codecov
-  
+dependencies:
+  pre:
+    - npm install -g codecov
+
 machine:
   node:
     version: 4.4.7
