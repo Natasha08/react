@@ -59,7 +59,7 @@
   "scripts": {
     "start": "webpack-dev-server --progress --colors --content-base src --inline --hot",
     "test": "mocha-webpack",
-    "babel": "babel-node node_modules/.bin/babel-istanbul cover _mocha test/**/*.js && cat ./coverage/lcov.info | ./node_modules/.bin/codecov"
+    "babel": "babel-node node_modules/.bin/babel-istanbul cover _mocha spec/**/*.js && cat ./coverage/lcov.info | ./node_modules/.bin/codecov"
   },
   "repository": {
     "type": "git",
