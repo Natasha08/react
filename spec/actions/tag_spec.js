@@ -1,5 +1,5 @@
 import _ from 'lodash-uuid';
-const User = require("../../src/js/models/User");
+const User = require("../../src/models/User");
 
   describe('Tag Test', function () {
   it('adds a tag to a new User', function () {

@@ -13,6 +13,7 @@ import { saveTodos } from "actions/saveTodoRepository";
 
 export default React.createClass({
   addTodo: function(evt) {
+    console.log('EVT', evt);
     store.dispatch(TodoActions.create(evt.target.value));
     evt.target.value = '';
   },

@@ -16,7 +16,7 @@ import Radium from 'radium';
 var Menu = require('react-burger-menu').slide
 // let pageName = 'Home';
 let RadiumLink = Radium(Link);
-let title = "Welcome to React & Redux!";
+let title = "Your Epic List Starts Here";
 
 export default class Layout extends React.Component {
 

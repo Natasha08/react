@@ -1,0 +1,5 @@
+--colors
+--reporter spec
+--require node_modules/source-map-support/register
+--webpack-config webpack.config-test.js
+spec/pages/todos_spec.js

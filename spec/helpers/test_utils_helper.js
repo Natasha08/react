@@ -1,7 +1,7 @@
 var enzyme = require('enzyme');
 import ReactDom from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
-import store from '../../src/js/store';
+import store from '../../src/store';
 import React from "react";
 import _ from 'lodash';
 

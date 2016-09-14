@@ -42,18 +42,22 @@
     "sinon": "^1.17.5",
     "style-loader": "^0.13.1",
     "underscore.inflection": "^1.3.2",
-    "webpack": "^1.13.1",
     "xhr": "^2.2.2"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^3.0.1",
     "html-webpack-plugin": "^2.22.0",
     "html-webpack-template": "^5.1.1",
-    "sinon-chai": "^2.8.0"
+    "mocha": "^3.0.2",
+    "mocha-webpack": "^0.6.0",
+    "sinon-chai": "^2.8.0",
+    "source-map-support": "^0.4.2",
+    "webpack": "^1.13.2",
+    "webpack-node-externals": "^1.3.3"
   },
   "scripts": {
     "start": "webpack-dev-server --progress --colors --content-base src --inline --hot",
-    "test": "mocha --compilers js:babel-core/register test/**/*.js",
+    "test": "mocha-webpack",
     "babel": "babel-node node_modules/.bin/babel-istanbul cover _mocha test/**/*.js && cat ./coverage/lcov.info | ./node_modules/.bin/codecov"
   },
   "repository": {

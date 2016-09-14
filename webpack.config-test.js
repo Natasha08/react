@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+var nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   output: {
@@ -28,7 +29,9 @@ module.exports = {
     }),
   ],
   resolve: {
-    root: [path.resolve(__dirname, 'src/js'), path.resolve(__dirname, 'node_modules')]
+    root: [path.resolve(__dirname, 'src'), path.resolve(__dirname, 'src/lib'), path.resolve(__dirname, 'node_modules')]
   },
-  target: 'node' // in order to ignore built-in modules like path, fs, etc.
+  target: 'node', // in order to ignore built-in modules like path, fs, etc.
+  externals: [nodeExternals()], // in order to ignore all modules in node_modules folder
+  devtool: "cheap-module-source-map" // faster than 'source-map'
 };

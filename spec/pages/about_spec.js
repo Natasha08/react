@@ -1,12 +1,8 @@
 import React from "react";
 import { shallow, mount } from 'enzyme';
 import {expect} from "chai";
+import About from 'pages/About';
 import setup from '../setup';
-import {logger} from "react-logger";
-import { enzymeRender } from '../helpers/test_utils_helper';
-import { findDOMNode } from 'react-dom';
-import About from '../../src/js/pages/About';
-import sinon from 'sinon';
 
 describe('About Page', function() {
   context('test', function () {

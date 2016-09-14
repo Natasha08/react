@@ -4,9 +4,9 @@ import setup from '../setup';
 import {logger} from "react-logger";
 import testHelper from '../helpers/test_utils_helper';
 import { findDOMNode } from 'react-dom';
-import Layout from '../../src/js/pages/Layout';
+import Layout from '../../src/pages/Layout';
 import sinon from 'sinon';
-import store from '../../src/js/store';
+import store from '../../src/store';
 import {Router, createMemoryHistory, browserHistory} from "react-router";
 var Menu = require('react-burger-menu').slide
 const history = createMemoryHistory("/todos");

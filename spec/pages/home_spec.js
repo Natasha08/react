@@ -1,12 +1,9 @@
-import { shallow, mount } from 'enzyme';
 import React from "react";
+import { shallow, mount } from 'enzyme';
 import {expect} from "chai";
+import Home from '../../src/pages/Home';
 import setup from '../setup';
-import {logger} from "react-logger";
-import { enzymeRender } from '../helpers/test_utils_helper';
-import { findDOMNode } from 'react-dom';
-import Home from '../../src/js/pages/Home';
-import sinon from 'sinon';
+
 
 describe('Home Page', function() {
   context('test', function () {

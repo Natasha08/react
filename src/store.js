@@ -17,8 +17,6 @@ import _ from 'lodash';
 
 import composeReducer from 'compose-reducer';
 
-
-
 let filteredTags = function(state, action) {
   if(state.currentObject) {
     if (state.currentObject.model_type === 'Todo') {
@@ -52,7 +50,7 @@ const rootReducer = (state = {}, action) => {
 
   return Object.assign(firstPass, {
     filteredTags: filteredTags(firstPass, action, 'filteredTags'),
-   currentTodo: currentTodo(firstPass, action, 'currentTodo')
+    currentTodo: currentTodo(firstPass, action, 'currentTodo')
   });
 }
 
