@@ -60,7 +60,8 @@
   "scripts": {
     "start": "webpack-dev-server --progress --colors --content-base src --inline --hot",
     "test": "mocha-webpack --watch",
-    "cover": "babel-istanbul cover mocha-webpack && cat ./coverage/lcov.info | ./node_modules/.bin/codecov"
+    "cover": "babel-istanbul cover mocha-webpack && cat ./coverage/lcov.info | ./node_modules/.bin/codecov",
+    "mocha": "babel-node node_modules/.bin/babel-istanbul cover _mocha spec/**/*.js && cat ./coverage/lcov.info | ./node_modules/.bin/codecov"
   },
   "repository": {
     "type": "git",
