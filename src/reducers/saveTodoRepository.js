@@ -1,6 +1,8 @@
 "use strict"
 
-export default function saveTodoRepositoryReducer(state = {
+import composeReducer from 'compose-reducer';
+
+export default function(state = {
 	fetching: false,
 	fetched: false,
 	text: [],
