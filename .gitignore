@@ -13,3 +13,6 @@ atom.deb
 
 ## mocha-webpack ##
 .tmp
+
+## test coverage ##
+coverage/

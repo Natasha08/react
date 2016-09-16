@@ -19,6 +19,7 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-2": "^6.13.0",
     "chai": "^3.5.0",
+    "codecov": "^1.0.1",
     "css-loader": "^0.23.1",
     "enzyme": "^2.4.1",
     "history": "^2.1.2",
@@ -58,8 +59,9 @@
   },
   "scripts": {
     "start": "webpack-dev-server --progress --colors --content-base src --inline --hot",
-    "test": "mocha-webpack",
-    "babel": "babel-node node_modules/.bin/babel-istanbul cover npm run test && cat ./coverage/lcov.info | ./node_modules/.bin/codecov"
+    "test": "mocha-webpack --watch",
+    "cover": "babel-istanbul cover mocha-webpack && cat ./coverage/lcov.info | ./node_modules/.bin/codecov",
+    "mocha": "babel-node node_modules/.bin/babel-istanbul cover _mocha spec/**/*.js && cat ./coverage/lcov.info | ./node_modules/.bin/codecov"
   },
   "repository": {
     "type": "git",
